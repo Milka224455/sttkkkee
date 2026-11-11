@@ -2,6 +2,5 @@ User-agent: *
 Allow: /
 Disallow: /admin/
 Disallow: /api/
-Disallow: /data/
 
 Sitemap: https://stake-bonus-20.com/sitemap.xml
