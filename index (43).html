@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bonus hunt : principe, vocabulaire et calculateur de break-even</title>
+<meta name="description" content="Comment faire un bonus hunt et calculer son break-even.">
+<meta name="robots" content="noindex, follow">
+<link rel="canonical" href="https://stake-bonus-20.com/fr/bonus-hunt/">
+<meta name="theme-color" content="#0f212e">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Stake Bonus 20">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:title" content="Bonus hunt : principe, vocabulaire et calculateur de break-even">
+<meta property="og:description" content="Comment faire un bonus hunt et calculer son break-even.">
+<meta property="og:url" content="https://stake-bonus-20.com/fr/bonus-hunt/">
+<meta property="og:image" content="https://stake-bonus-20.com/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://stake-bonus-20.com/assets/og-image.png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://stake-bonus-20.com/fr/"}, {"@type": "ListItem", "position": 2, "name": "Le bonus hunt expliqué", "item": "https://stake-bonus-20.com/fr/bonus-hunt/"}]}, {"@type": "Article", "headline": "Le bonus hunt expliqué", "description": "Comment faire un bonus hunt et calculer son break-even.", "inLanguage": "fr", "datePublished": "2026-11-11", "dateModified": "2026-11-11", "author": {"@type": "Organization", "name": "Stake Bonus 20", "url": "https://stake-bonus-20.com/"}, "publisher": {"@type": "Organization", "name": "Stake Bonus 20"}, "mainEntityOfPage": "https://stake-bonus-20.com/fr/bonus-hunt/"}, {"@type": "WebApplication", "name": "Calculateur de break-even", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "url": "https://stake-bonus-20.com/fr/bonus-hunt/", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR"}}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "C'est quoi un bon break-even ?", "acceptedAnswer": {"@type": "Answer", "text": "Plus il est bas, mieux c'est. Sous 50x c'est jouable, au-dessus de 100x c'est difficile."}}, {"@type": "Question", "name": "Combien de bonus dans un hunt ?", "acceptedAnswer": {"@type": "Answer", "text": "10 à 20 pour débuter."}}, {"@type": "Question", "name": "Un bonus hunt est-il rentable ?", "acceptedAnswer": {"@type": "Answer", "text": "Non, il ne change pas le RTP des slots. C'est une façon de jouer, pas une stratégie gagnante."}}]}]}</script>
+</head>
+<body>
+<a class="skip" href="#inhalt">Zum Inhalt</a>
+<div class="adbar">Publicité · Cette page contient des liens d'affiliation · 18+ · Le jeu peut créer une dépendance</div>
+<header class="top"><div class="wrap">
+<a class="logo" href="/fr/" aria-label="Stake Bonus 20 Startseite">Stake Bonus <b>20</b></a>
+<button class="burger" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
+<nav class="nav" aria-label="Hauptmenü"><a href="/fr/">Bonus Stake</a><a href="/fr/stake-originals/">Originaux</a><a href="/fr/stake-vip-rechner/">Calculateur VIP</a><a href="/fr/bonus-hunt/" aria-current="page">Bonus hunt</a><a href="/fr/providers/">Providers</a><a href="/fr/stake-eu-erfahrungen/">Avis</a><a class="btn btn-sm" href="https://stake.eu/?c=R5VNjJTc" rel="sponsored nofollow noopener" target="_blank">S'inscrire</a></nav>
+<span class="age" title="18+">18+</span>
+</div></header>
+<main id="inhalt">
+<div class="wrap"><nav class="crumbs" aria-label="Fil d'Ariane"><a href="/fr/">Accueil</a><span>›</span>Bonus hunt</nav></div>
+<section style="padding-top:24px">
+<div class="wrap">
+<span class="kicker">Outil · Tracker de bonus hunt</span>
+<h1>Tracker de bonus hunt : ajoute tes bonus, break-even et RTP en direct</h1>
+<p class="lead" style="margin:16px 0 28px">Entre ton budget de départ, ajoute chaque bonus avec la slot et la mise, puis indique le gain à l'opening. Le tracker calcule tout seul le break-even, le break-even actuel, le multiplicateur moyen, le RTP et ton bilan.</p>
+<div class="calc bh" id="bh" data-phase="hunt">
+<p class="bh-phase" id="bh-phase"></p>
+<div class="bh-head">
+<div><label for="bh-start">Budget de départ (€ / SC)</label><input id="bh-start" type="number" inputmode="decimal" min="0" value="100"></div>
+<form id="bh-add" class="bh-add"><div><label for="bh-slot">Slot</label><input id="bh-slot" placeholder="ex. Wanted Dead or a Wild" autocomplete="off"></div>
+<div><label for="bh-bet">Mise</label><input id="bh-bet" inputmode="decimal" placeholder="0,50"></div>
+<button class="btn btn-sm" type="submit">+ Ajouter le bonus</button></form>
+</div>
+<div class="bh-ctrl"><button class="btn" id="bh-go" type="button">Fin du bonus hunt : lancer l'opening</button>
+<button class="bh-reset" id="bh-back" type="button">← Revenir au hunting</button></div>
+<div class="bh-result" id="bh-result" hidden></div>
+<div class="bh-stats">
+<div><small>Bonus</small><b id="s-n">0</b></div>
+<div><small>Mise moy.</small><b id="s-avgbet">–</b></div>
+<div><small>BE nécessaire</small><b id="s-be">–</b></div>
+<div><small>BE actuel</small><b id="s-cbe">–</b></div>
+<div><small>Gagné</small><b id="s-won">–</b></div>
+<div><small>Moy. X</small><b id="s-avgx">–</b></div>
+<div><small>RTP en direct</small><b id="s-rtp">–</b></div>
+<div><small>Bilan</small><b id="s-bal">–</b></div>
+</div>
+<div class="bar"><i id="s-bar"></i></div>
+<div class="scroll"><table class="tbl bh-table"><thead><tr><th>#</th><th>Slot</th><th>Mise</th><th>Gain</th><th>Multi</th></tr></thead><tbody id="bh-rows"></tbody></table></div>
+<button class="bh-reset" id="bh-reset" type="button">Réinitialiser le hunt</button>
+<p class="small">Tes données restent uniquement dans ton navigateur.</p>
+</div>
+</div>
+</section>
+<section class="alt">
+<div class="wrap prose">
+<h2>C'est quoi un bonus hunt ?</h2>
+<p>On joue plusieurs slots à la suite jusqu'à déclencher un <strong>bonus</strong> sur chacune, sans l'ouvrir tout de suite. Une fois tous les bonus réunis, on les ouvre un par un : c'est l'<strong>opening</strong>.</p>
+<h2>Les 4 phases</h2>
+<ol>
+<li><strong>Budget de départ :</strong> par ex. 100 € de Stake Cash, plafond du hunt.</li>
+<li><strong>Hunting :</strong> tu fais tourner les slots jusqu'au bonus et tu notes slot + mise dans le tracker.</li>
+<li><strong>Stop :</strong> budget épuisé ou assez de bonus (10 à 20).</li>
+<li><strong>Opening :</strong> tu ouvres les bonus et entres chaque gain. Le tracker te dit si tu es au-dessus du break-even.</li>
+</ol>
+<h2>Les valeurs du tracker</h2>
+<div class="scroll"><table class="tbl"><thead><tr><th>Valeur</th><th>Signification</th></tr></thead><tbody>
+<tr><td>Start</td><td>Budget investi dans le hunt</td></tr>
+<tr><td>Break-even (BE)</td><td>Multiplicateur moyen nécessaire par bonus : start ÷ somme des mises</td></tr>
+<tr><td>BE actuel</td><td>Multiplicateur moyen nécessaire sur les bonus restants</td></tr>
+<tr><td>Moy. X</td><td>Multiplicateur moyen des bonus déjà ouverts</td></tr>
+<tr><td>RTP</td><td>Gagné ÷ start × 100. Au-dessus de 100 % = bénéfice</td></tr>
+<tr><td>Bilan</td><td>Gagné − start</td></tr>
+</tbody></table></div>
+<h2>Conseils</h2>
+<ul>
+<li><strong>Ne jamais recharger le budget.</strong></li>
+<li><strong>Noter chaque mise.</strong></li>
+<li><strong>Accepter la variance :</strong> la plupart des hunts finissent en négatif. C'est un divertissement.</li>
+<li><strong>S'entraîner en Gold Coins</strong> sur Stake.eu.</li>
+</ul>
+</div>
+</section>
+<section><div class="wrap prose faq"><h2>Questions fréquentes sur le bonus hunt</h2><details><summary>C&#x27;est quoi un bon break-even ?</summary><p>Plus il est bas, mieux c&#x27;est. Sous 50x c&#x27;est jouable, au-dessus de 100x c&#x27;est difficile.</p></details>
+<details><summary>Combien de bonus dans un hunt ?</summary><p>10 à 20 pour débuter.</p></details>
+<details><summary>Un bonus hunt est-il rentable ?</summary><p>Non, il ne change pas le RTP des slots. C&#x27;est une façon de jouer, pas une stratégie gagnante.</p></details></div></section>
+<script src="/assets/bonushunt.js" defer></script>
+
+</main>
+<div class="wrap prose" style="padding-bottom:48px"><div class="author"><div class="av">SB</div><div><p><strong style="color:#fff">Rédaction Stake Bonus 20</strong> · Dernière vérification le 11 novembre 2026</p><p>Nous testons Stake.eu nous-mêmes et vérifions régulièrement les conditions, les règles et le cadre légal.</p></div></div></div>
+<footer><div class="wrap">
+<div class="fgrid"><div><a class="logo" href="/fr/">Stake Bonus <b>20</b></a><p class="small" style="margin-top:12px">Portail d'information indépendant sur Stake.eu. Nous ne sommes pas Stake et ne proposons aucun jeu. Nous sommes rémunérés par affiliation, sans coût pour toi.</p></div>
+<div><h4>Guides</h4><ul><li><a href="/fr/stake-eu-erklaert/">Stake.eu – c'est quoi ?</a></li><li><a href="/fr/stake-bonus-code/">Code bonus Stake</a></li><li><a href="/fr/stake-eu-erfahrungen/">Avis Stake.eu</a></li><li><a href="/fr/stake-eu-vs-stake-com/">Stake.eu vs Stake.com</a></li><li><a href="/fr/bonus-hunt/">Tracker de bonus hunt</a></li><li><a href="/fr/stake-vip-rechner/">Calculateur VIP</a></li></ul></div><div><h4>Stake & casino</h4><ul><li><a href="/fr/stake-originals/">Originaux Stake</a></li><li><a href="/fr/providers/">Providers</a></li><li><a href="/fr/blackjack/">Tableau blackjack</a></li><li><a href="/fr/roulette/">Roulette</a></li><li><a href="/fr/baccarat/">Baccarat</a></li></ul></div><div><h4>Affiliation</h4><ul><li><a href="/fr/kontakt/?topic=affiliate">Demandes d'affiliation</a></li><li><a href="/fr/kontakt/">Contact</a></li></ul></div></div>
+<div class="rg"><p><strong>18+ · Jeu responsable :</strong> le jeu peut créer une dépendance. Aide gratuite et anonyme en Allemagne : BZgA <a href="tel:+498001372700">0800 1 37 27 00</a> · <a href="https://www.check-dein-spiel.de" rel="noopener" target="_blank">check-dein-spiel.de</a></p><p>Version française de travail, non indexée. Mise à jour : 11 novembre 2026.</p><p class="legal"><a href="/impressum/">Impressum</a> · <a href="/datenschutz/">Datenschutz</a> · <a href="/">Version allemande</a></p><p>© 2026 Stake Bonus 20</p></div>
+</div></footer>
+<div class="sticky"><span>20 € en Stake Cash<small>18+ · Publicité · CG applicables</small></span><a class="btn btn-green btn-sm" href="https://stake.eu/?c=R5VNjJTc" rel="sponsored nofollow noopener" target="_blank">Récupérer</a></div>
+<script src="/assets/app.js" defer></script>
+</body>
+</html>

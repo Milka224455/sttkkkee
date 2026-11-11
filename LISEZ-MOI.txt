@@ -1,0 +1,15 @@
+STAKE BONUS 20 – MISE EN LIGNE
+==============================
+
+1. Chez ton hébergeur, ouvre le Gestionnaire de fichiers > dossier public_html (ou www).
+2. Sauvegarde puis supprime les anciens fichiers.
+3. Uploade le zip, clique sur « Extraire ». index.html doit être directement dans public_html.
+4. Ouvre https://stake-bonus-20.com/admin/ et crée tout de suite ton mot de passe admin.
+5. Google Search Console : ajoute le site et soumets https://stake-bonus-20.com/sitemap.xml
+
+À REMPLIR TOI-MÊME (texte entre crochets [ ]) :
+- impressum/index.html  : nom de la société, adresse, n° C-XXXXX, directeur, e-mail
+- datenschutz/index.html : mêmes infos + nom de l'hébergeur
+
+L'hébergement doit supporter PHP (formulaire de contact + admin).
+Supprime ce fichier LISEZ-MOI.txt après la mise en ligne.
